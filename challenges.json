@@ -1,0 +1,37 @@
+[
+    {
+        "type":"body",
+        "description":"Estique um de seus braços com a palma da mão virada para a frente e puxe os dedos para cima.",
+        "amount":80
+    },
+    {
+        "type":"body",
+        "description":"Estique seu braço contra o peito e puxe-o utilizando o outro braço por 10 segundos por braço.",
+        "amount":60
+    },
+    {
+        "type":"body",
+        "description":"Puxe seu pescoço com a ajuda da mão para a direita e para a esquerda, permanecendo na posição por por alguns segundos.",
+        "amount":70
+    },
+    {
+        "type":"body",
+        "description":" Com as duas mãos na parte de trás da cabeça, leve-a para baixo, alongando a parte de trás da região.",
+        "amount":60
+    },
+    {
+        "type":"body",
+        "description":" Cruze as pernas e desça com as mãos esticadas em direção ao chão. Repita o movimento com a outra perna na frente.",
+        "amount":100
+    },
+    {
+        "type":"body",
+        "description":"Sentado, abra as pernas e tente encostas as palmas das mãos no chão",
+        "amount":80
+    },
+    {
+        "type":"body",
+        "description":"Puxe o joelho de encontro ao peito e segure por alguns segundos.",
+        "amount":70
+    }
+]
