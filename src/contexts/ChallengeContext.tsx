@@ -12,9 +12,9 @@ interface Challenge{
 
 interface ChallengeContextProviderProps {
     children : ReactNode;
-    level:number;
-    currentExperience:number;
-    challengesCompleted:number;
+    level?:number;
+    currentExperience?:number;
+    challengesCompleted?:number;
 }
 interface ChallengeContextData{
     level:number;
