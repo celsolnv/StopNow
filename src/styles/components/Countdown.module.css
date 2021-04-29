@@ -25,9 +25,9 @@
     flex: 1;
 }
 .countdownContainer > div span:first-child{
-    border-right: 1px solid #f0f1f3;
+    border-right: 1px solid var(--gray);
 }.countdownContainer > div span:last-child{
-    border-left: 1px solid #f0f1f3;
+    border-left: 1px solid var(--gray);
 }
 
 .countdownContainer > span{
@@ -48,7 +48,7 @@
     border-radius: 5px;
 
     background: var(--blue);
-    color:var(--white);
+    color:var(--text);
     font-size: 1.25rem;
     font-weight: 600;
 

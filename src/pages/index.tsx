@@ -11,14 +11,17 @@ import { CountdownProvider } from '../contexts/CountdownContext';
 import { ChallengeContextProvider } from '../contexts/ChallengeContext';
 
 import styles from '../styles/pages/Home.module.css';
-import { SideMenu } from '../components/SideMenu';
+import  SideMenu  from '../components/SideMenu';
+import { ThemeContext } from 'styled-components';
+import { useContext } from 'react';
 
 interface HomeProps{
   level:number;
   currentExperience:number;
   challengesCompleted:number;
 }
-export default function Home(props) {
+export default function Home(props:HomeProps) {
+
   return (
     <ChallengeContextProvider
       level = {props.level}
@@ -29,7 +32,7 @@ export default function Home(props) {
         <Head>
           <title>Inicio | StopNow </title>
         </Head>
-        <SideMenu/>
+        {/* <SideMenu/> */}
         <ExperienceBar/>
         <CountdownProvider>
           <section>

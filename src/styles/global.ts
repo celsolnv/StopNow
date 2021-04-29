@@ -1,9 +1,28 @@
-*{
+import {createGlobalStyle} from 'styled-components'
+
+export default createGlobalStyle`
+   *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+:root{
+    --background: ${props => props.theme.colors.background};
+    --text: ${props => props.theme.colors.text};
+    --title: ${props => props.theme.colors.title};
+    --red: ${props => props.theme.colors.red};
+    --green: ${props => props.theme.colors.green};
+    --white:${props => props.theme.colors.white};
+    --gray:${props => props.theme.colors.gray};
 
+    --text-highlight: #b3b9ff;
+    --gray-line: #dcdde0;
+
+    --blue: #5965E0;
+    --blue-dark: #4953B8;
+    --blue-twitter: #2AA9E0;
+
+}
 @media(max-width:1048px){
     html{
         font-size: 93.75%; /* 15px */
@@ -41,3 +60,5 @@ a{
     text-decoration: none;
     color:inherit;
 }
+
+`
