@@ -12,6 +12,7 @@ import { ChallengeContextProvider } from '../contexts/ChallengeContext';
 
 import styles from '../styles/pages/Home.module.css';
 import  SideMenu  from '../components/SideMenu';
+import NavBar from '../components/NavBar';
 import { ThemeContext } from 'styled-components';
 import { useContext } from 'react';
 
@@ -28,11 +29,13 @@ export default function Home(props:HomeProps) {
       currentExperience = {props.currentExperience}
       challengesCompleted = {props.challengesCompleted}
     >
+      <NavBar/>
       <div className={styles.container}>
         <Head>
           <title>Inicio | StopNow </title>
         </Head>
         {/* <SideMenu/> */}
+
         <ExperienceBar/>
         <CountdownProvider>
           <section>
