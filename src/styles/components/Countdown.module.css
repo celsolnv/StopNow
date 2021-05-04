@@ -47,15 +47,15 @@
     border: 0;
     border-radius: 5px;
 
-    background: var(--blue);
-    color:var(--text);
+    background: var(--primary);
+    color:var(--secondary);
     font-size: 1.25rem;
     font-weight: 600;
 
     transition: background-color 0.2s;
 }
 .countdownButton:not(:disabled):hover{
-    background: var(--blue-dark);
+    background: var(--primary);
 }
 .countdownButtonActive{
     background-color: var(--white);

@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import ReactSwitch from 'react-switch';
+import Switch from 'react-switch';
 import { StyleContext } from '../../contexts/StyleContext';
 import {Nav} from './styles'
 export default function NavBar(){
@@ -8,20 +8,17 @@ export default function NavBar(){
 
     return(
         <Nav>
-            {/* <img src="./static/menu.svg" alt="Menu" id="btnMenu"/> */}
             <h1>StopNow</h1>
             <div>
                 <span>Modo noturno</span>
-                <ReactSwitch
+                <Switch
                     onChange={toggleTheme}
-                    checked={theme.title=='light'}
+                    checked={theme.title == 'dark'}
                     checkedIcon={false}
                     uncheckedIcon={false}
                     width={40}
                     height={10}
                     handleDiameter={20}
-
-                    // offColor="black"
                 />
             </div>
 

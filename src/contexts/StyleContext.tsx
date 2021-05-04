@@ -3,6 +3,7 @@ import { DefaultTheme, ThemeProvider } from "styled-components";
 import light from '../styles/theme/light';
 import dark from '../styles/theme/dark';
 import { useState } from 'react';
+import usePersisteState from "../utils/usePersistState";
 
 interface StyleContextData{
     theme:DefaultTheme;
@@ -14,10 +15,8 @@ interface StyleContextProps{
 export const StyleContext = createContext({} as StyleContextData);
 
 export function StyleContextProvider({children}:StyleContextProps ){
-    const [theme, setTheme] = useState(dark);
-
+    const [theme, setTheme] = usePersisteState('theme',light);
     const toggleTheme = ()=>{
-        console.log("Mudando tema:",theme.title)
         setTheme( theme.title === 'light' ? dark : light );
     }
     

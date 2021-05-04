@@ -14,7 +14,8 @@ export default createGlobalStyle`
     --green: ${props => props.theme.colors.green};
     --white:${props => props.theme.colors.white};
     --gray:${props => props.theme.colors.gray};
-
+    --primary:${props => props.theme.colors.primary};
+    --secondary:${props => props.theme.colors.secondary};
     --text-highlight: #b3b9ff;
     --gray-line: #dcdde0;
 
