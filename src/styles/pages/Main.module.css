@@ -7,6 +7,7 @@
     align-items: center;
 }
 .formContainer {
+    padding-left: 2rem;
     justify-self: center;
     align-self: center;
 }
@@ -14,17 +15,20 @@
     padding-bottom: 3rem;
 }
 .formContainer > div > *{
-    /* padding-bottom: 3rem; */
-    padding: 0.875rem;
+    padding: 1rem;
 }
 .labelGithub{
     display: flex;
     justify-content: center;
     align-items: center;
-
+    background-color: transparent;
+    border:none;
     color:var(--text-blue);
-
+    transition: filter 0.2s;
     width: 320px;
+}
+.labelGithub:hover{
+    filter:brightness(0.9);
 }
 .labelGithub > img{
     padding-right:1rem ;
@@ -40,7 +44,8 @@
     border:none;
     background: linear-gradient(90deg, #4953B8 0%, rgba(73, 83, 184, 0.2) 100%);
     font-size: 1rem;
-    padding: 1rem;
+    height: 100%;
+    padding: 0.875rem;
     color:var(--text-blue);
 }
 .formControl input::placeholder{
@@ -48,8 +53,13 @@
 }
 .formControl button{
     background-color: var(--blue-dark);
-    padding: 1rem;
+    padding: 0 1rem;
     font-size: 0;
     border: none;
     height: 100%;
+    transition: 0.5s;
+    border-radius: 0 5px 5px 0;
+}
+.formControl .buttonActivated{
+    background-color:var(--green);
 }
