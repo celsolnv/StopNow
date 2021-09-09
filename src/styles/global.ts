@@ -23,6 +23,8 @@ export default createGlobalStyle`
     --blue-dark: #4953B8;
     --blue-twitter: #2AA9E0;
 
+    --text-blue: #B2B9FF;
+
 }
 @media(max-width:1048px){
     html{
