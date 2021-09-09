@@ -12,11 +12,11 @@
 
 <a href="https://pt.wikipedia.org/wiki/T%C3%A9cnica_pomodoro"> Clique aqui para saber mais!</a>
 
-<h1>Demonstração</h1>
+<h1>Demo</h1>
 <img src="./screenshorts/pomodoro_exercicios.gif" alt="Completando uma tarefa">
 <p align="center"   >
     Acima podemos ver o que acontece quando o tempo chega ao fim e 
-    quando o usuário passa de nível
+    quando o usuário passa de nível. Você pode acessar a aplicação clicando  <a href="stop-now.vercel.app"> nesse link</a>
 </p>
 
 <h2> Telas complementares</h2>
