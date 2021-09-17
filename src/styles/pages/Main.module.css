@@ -1,0 +1,65 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--blue);
+    color:var(--white);
+    display: flex;
+    align-items: center;
+}
+.formContainer {
+    padding-left: 2rem;
+    justify-self: center;
+    align-self: center;
+}
+.formContainer > img{
+    padding-bottom: 3rem;
+}
+.formContainer > div > *{
+    padding: 1rem;
+}
+.labelGithub{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border:none;
+    color:var(--text-blue);
+    transition: filter 0.2s;
+    width: 320px;
+}
+.labelGithub:hover{
+    filter:brightness(0.9);
+}
+.labelGithub > img{
+    padding-right:1rem ;
+}
+
+.formControl{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+}
+.formControl input{ 
+    border:none;
+    background: linear-gradient(90deg, #4953B8 0%, rgba(73, 83, 184, 0.2) 100%);
+    font-size: 1rem;
+    height: 100%;
+    padding: 0.875rem;
+    color:var(--text-blue);
+}
+.formControl input::placeholder{
+    color:var(--text-blue);
+}
+.formControl button{
+    background-color: var(--blue-dark);
+    padding: 0 1rem;
+    font-size: 0;
+    border: none;
+    height: 100%;
+    transition: 0.5s;
+    border-radius: 0 5px 5px 0;
+}
+.formControl .buttonActivated{
+    background-color:var(--green);
+}

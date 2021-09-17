@@ -1,66 +1,50 @@
-import Head from 'next/head';
-import { GetServerSideProps } from 'next';
+import { useSession, signIn, signOut } from "next-auth/client"
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router'
+import styled from '../styles/pages/Main.module.css';
 
-import { CompleteChallenges } from '../components/CompleteChallenges';
-import { ChallengeBox } from '../components/ChallengeBox';
-import {Countdown} from '../components/Countdown';
-import { ExperienceBar } from '../components/ExperienceBar'
-import { Profile } from '../components/Profile'
+export default function Home(){
+    const [userName, setUserName] = useState('');
+    const [session] = useSession();
+    const router = useRouter();
+    console.log(session);
+    useEffect(() => {
+        if (session){
+            router.push("/home")
+            return;
+        }
+    }, [session])
+    return(
+        <div className={styled.container}>
+            <img src="/images/simbolo.png" alt="simbolo" />
+            <div className={styled.formContainer}>
+                <img src="/images/logo.png" alt="logo" />
+                <div>
+                    <h1>Bem-vindo</h1>
+                    <button 
+                        onClick={()=>{signIn('github',{callbackUrl:'/home'})}}
+                        className={styled.labelGithub}>
+                        <img src="/icons/github.svg" alt="icon github" />
+                        <span>Faça login com seu github para começar</span>
+                    </button>
+                    <div className={styled.formControl}>
+                        <input 
+                            type="text" 
+                            placeholder="Digite seu username" 
+                            value={userName} 
+                            onChange={(e)=>{
+                                setUserName(e.target.value)
+                            }}
+                        />
+                        <button className={ userName ? styled.buttonActivated : '' }>
+                            <img src="/icons/right.svg" alt="arrow right" />
+                        </button>
+                    </div>
 
-import { CountdownProvider } from '../contexts/CountdownContext';
-import { ChallengeContextProvider } from '../contexts/ChallengeContext';
-
-import styles from '../styles/pages/Home.module.css';
-import  SideMenu  from '../components/SideMenu';
-import NavBar from '../components/NavBar';
-import { ThemeContext } from 'styled-components';
-import { useContext } from 'react';
-
-interface HomeProps{
-  level:number;
-  currentExperience:number;
-  challengesCompleted:number;
-}
-export default function Home(props:HomeProps) {
-
-  return (
-    <ChallengeContextProvider
-      level = {props.level}
-      currentExperience = {props.currentExperience}
-      challengesCompleted = {props.challengesCompleted}
-    >
-      <NavBar/>
-      <div className={styles.container}>
-        <Head>
-          <title>Inicio | StopNow </title>
-        </Head>
-        {/* <SideMenu/> */}
-
-        <ExperienceBar/>
-        <CountdownProvider>
-          <section>
-            <div>
-              <Profile/>
-              <CompleteChallenges/>
-              <Countdown/>
+                </div>
             </div>
-            <div>
-              <ChallengeBox></ChallengeBox>
-            </div>
-          </section>
-        </CountdownProvider>
-      </div>
-    </ChallengeContextProvider>
-  )
+        </div>
+
+    )
 }
 
-export const getServerSideProps:GetServerSideProps = async (ctx)=>{
-  const {level, currentExperience, challengesCompleted} = ctx.req.cookies;
-  return{
-    props:{
-      level: Number(level),
-      currentExperience: Number(currentExperience),
-      challengesCompleted: Number(challengesCompleted),
-    }
-  };
-}

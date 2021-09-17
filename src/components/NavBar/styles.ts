@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 export const Nav = styled.nav`
     width: 100%;
+    position: absolute;
+    z-index: 2;
     height: 64px;
     background: #556CD6;
     box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
