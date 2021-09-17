@@ -12,6 +12,7 @@ import { ChallengeContextProvider } from '../contexts/ChallengeContext';
 
 import styles from '../styles/pages/Home.module.css';
 import NavBar from '../components/NavBar';
+import SideMenu from '../components/SideMenu';
 
 interface HomeProps{
   level:number;
@@ -31,11 +32,11 @@ export default function Home(props:HomeProps) {
         <Head>
           <title>Inicio | StopNow </title>
         </Head>
-        {/* <SideMenu/> */}
+        <SideMenu/>
 
         <ExperienceBar/>
         <CountdownProvider>
-          <section>
+          <section> 
             <div>
               <Profile/>
               <CompleteChallenges/>

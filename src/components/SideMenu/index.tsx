@@ -1,17 +1,19 @@
-import { useContext } from 'react';
-import ReactSwitch from 'react-switch';
-import { StyleContext } from '../../contexts/StyleContext';
-import styles from './style.module.css';
+import { useRouter } from 'next/router';
+import { BiHomeAlt } from 'react-icons/bi/index'
+import { FiAward } from 'react-icons/fi/index'
+import { NavLink } from './NavLink';
+import {SideMenuContainer} from './styles'
+
 export default function SideMenu(){
-    const {theme,toggleTheme} = useContext(StyleContext)
+    
+    const router = useRouter();
+
     return(
-        <div className={styles.SideMenuContainer}>
-            <ul className={styles.SideMenuItens}>
-                <ReactSwitch
-                    onChange={toggleTheme}
-                    checked={theme.title=='light'}
-                />
+        <SideMenuContainer>
+            <ul>
+                <NavLink Icon={BiHomeAlt} href="/home" />
+                <NavLink Icon={FiAward}   href="/ranking"/>
             </ul>
-        </div>
+        </SideMenuContainer>
     )
 }
