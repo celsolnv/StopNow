@@ -1,13 +1,12 @@
 import { useSession, signIn, signOut } from "next-auth/client"
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router'
-import styled from '../styles/pages/Main.module.css';
+import { Container, UserNameButton, UserNameContainer,GithubButton,Title } from '../styles/pages/index';
 
 export default function Home(){
     const [userName, setUserName] = useState('');
     const [session] = useSession();
     const router = useRouter();
-    console.log(session);
     useEffect(() => {
         if (session){
             router.push("/home")
@@ -15,19 +14,19 @@ export default function Home(){
         }
     }, [session])
     return(
-        <div className={styled.container}>
+        <Container>
             <img src="/images/simbolo.png" alt="simbolo" />
-            <div className={styled.formContainer}>
+            <div>
                 <img src="/images/logo.png" alt="logo" />
                 <div>
-                    <h1>Bem-vindo</h1>
-                    <button 
+                    <Title>Bem-vindo</Title>
+                    <GithubButton 
                         onClick={()=>{signIn('github',{callbackUrl:'/home'})}}
-                        className={styled.labelGithub}>
+                    >
                         <img src="/icons/github.svg" alt="icon github" />
                         <span>Faça login com seu github para começar</span>
-                    </button>
-                    <div className={styled.formControl}>
+                    </GithubButton>
+                    <UserNameContainer >
                         <input 
                             type="text" 
                             placeholder="Digite seu username" 
@@ -36,14 +35,14 @@ export default function Home(){
                                 setUserName(e.target.value)
                             }}
                         />
-                        <button className={ userName ? styled.buttonActivated : '' }>
+                        <UserNameButton isActive={Boolean(userName)} >
                             <img src="/icons/right.svg" alt="arrow right" />
-                        </button>
-                    </div>
+                        </UserNameButton>
+                    </UserNameContainer>
 
                 </div>
             </div>
-        </div>
+        </Container>
 
     )
 }
