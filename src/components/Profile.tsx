@@ -1,3 +1,4 @@
+import Cookies from 'js-cookie';
 import { useSession } from 'next-auth/client';
 import { useContext, useEffect } from 'react';
 import { ChallengeContext } from '../contexts/ChallengeContext';
@@ -7,6 +8,7 @@ export function Profile(){
 
     const { level } = useContext(ChallengeContext)
     const [session] = useSession();
+    const userName = Cookies.get('username');
 
     return session ? (
         <div className={styles.profileContainer} >
@@ -21,9 +23,9 @@ export function Profile(){
         </div>
     ) : (
         <div className={styles.profileContainer} >
-            <img src="" alt=""/>
+            <img src="images/anonymous.jpg" alt="usuário anônimo"/>
             <div>
-                <strong>Anônimo</strong>
+                <strong>{userName}</strong>
                 <p>
                     <img src='icons/level.svg' alt="level" />
                     Level { level }

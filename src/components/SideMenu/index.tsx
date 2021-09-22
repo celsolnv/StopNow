@@ -12,7 +12,7 @@ export default function SideMenu(){
         <SideMenuContainer>
             <ul>
                 <NavLink Icon={BiHomeAlt} href="/home" />
-                <NavLink Icon={FiAward}   href="/ranking"/>
+                {/* <NavLink Icon={FiAward}   href="/ranking"/> */}
             </ul>
         </SideMenuContainer>
     )

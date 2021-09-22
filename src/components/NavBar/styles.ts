@@ -21,3 +21,18 @@ export const Nav = styled.nav`
         padding:1rem ;
     }
 `
+export const SignOut = styled.button`
+    padding: 0.5rem;
+
+    border: 1px solid transparent;
+    border-radius: 5px;
+
+    background-color: ${props => props.theme.colors.blueDark};
+    color: ${props => props.theme.colors.white };
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+
+`
